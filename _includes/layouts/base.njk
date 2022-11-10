@@ -13,26 +13,6 @@
     {{ content | safe }}
     {% include 'partials/_footer.html' %}
 
-    <div class="absolute flex flex-col justify-center h-screen z-50">
-      <div class="fixed min-h-96 flex flex-row items-center group w-80 transform duration-300 -translate-x-72  hover:translate-x-0">
-        <div class="bg-surface h-full w-full p-4 rounded-r-md text-onSurface shadow-md flex flex-col items-center justify-around">
-          
-          <div class="text-left">
-            <h2 class="text-2xl font-semibold antialiased uppercase">Job Portal</h2>
-            <p class="text-xs">Dhaka Credit is the first & largest Credit Union of its kind currently in Bangladesh. Join with us.</p>
-          </div>
-          <ul class="flex flex-col w-full divide-y my-10">
-            <li class="hover:shadow-sm hover:bg-backgroundVariant overflow-hidden p-1 rounded-sm"><a href="/archives/career/single/circular-details/"><p class="antialiased">Software Engineer</p> <p class="text-xs">BSc in CSE</p></a></li>
-            <li class="hover:shadow-sm hover:bg-backgroundVariant overflow-hidden p-1 rounded-sm"><a href="/archives/career/single/circular-details/"><p class="antialiased">Database Administrator</p> <p class="text-xs">BSc in CSE</p></a></li>
-            <li class="hover:shadow-sm hover:bg-backgroundVariant overflow-hidden p-1 rounded-sm"><a href="/archives/career/single/circular-details/"><p class="antialiased">UI/UX Designer and Developer</p> <p class="text-xs">Diploma in Graphycs</p></a></li>
-          </ul>
-          <a href="/archives/career/" class="hover:text-primary hover:font-semibold block text-center">View All</a>
-        </div>
-        <p class="rounded-r-md text-sideways  text-center capitalize shadow-md px-2 py-6 text-onPrimaryVariant bg-primary">
-        Work With Us
-        </p>
-      </div>
-    </div>
 
     <div class="absolute flex flex-col justify-center h-screen z-50 right-0">
       
@@ -41,7 +21,7 @@
       :class="{'-translate-x-10' : !rightSideNavOpen, '-translate-x-80' : rightSideNavOpen }"
       @click="rightSideNavOpen = !rightSideNavOpen">
          <p class="rounded-l-md text-sideways  text-center capitalize shadow-md px-2 py-6 text-onPrimaryVariant bg-primary">
-        Online Transaction
+        Registration
         </p>
         <div class="bg-surface h-full w-full p-4 rounded-l-md text-onSurface shadow-md flex flex-col items-center justify-evenly">
           <div class="flex justify-start w-full" >

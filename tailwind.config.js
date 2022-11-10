@@ -2,10 +2,10 @@
 const withAnimations = require("animated-tailwindcss");
 module.exports = withAnimations({
   content: [
-    "./_includes/**/*.{html,njk}"
-    , "./archives/**/*.{html,njk}"
-    , "./pages/**/*.{html,njk}"
-    , "./**/*.{njk}"
+    "./_includes/**/*.{html,njk}",
+    "./archives/**/*.{html,njk}",
+    "./pages/**/*.{html,njk}",
+    "./**/*.{njk}",
   ],
   theme: {
     extend: {
@@ -52,7 +52,8 @@ module.exports = withAnimations({
           "Archivo",
         ],
         monospace: ["JetBrains Mono", "Source Code Pro"],
-        "bangla-uni": ["Noto Serif Bengali", "Baloo Da 2"],
+        "bangla-noto": ["Noto Serif Bengali"],
+        "bangla-baloo": ["Baloo Da 2"],
         galada: ["Galada"],
         "mrs-saint-delafield": ["Mrs Saint Delafield"],
         amita: ["Amita"],
