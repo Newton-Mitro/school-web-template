@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="/css/style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" integrity="sha512-Mo79lrQ4UecW8OCcRUZzf0ntfMNgpOFR46Acj2ZtWO8vKhBvD79VCp3VOKSzk6TovLg5evL3Xi3u475Q/jMu4g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
+  </head>
+  <body x-data="{topNavOpen: false, leftSideNavOpen: false, scrollFromTop: false, loggedIn: false, rightSideNavOpen: false}"
+  @scroll.window="window.pageYOffset > 60 ? scrollFromTop = true : scrollFromTop = false">
+    <div id="root" class="relative bg-background min-h-screen flex flex-col font-sans-serif">
+    {% include 'partials/_header.html' %}
+    {{ content | safe }}
+    {% include 'partials/_footer.html' %}
+
+    <div class="absolute flex flex-col justify-center h-screen z-50">
+      <div class="fixed min-h-96 flex flex-row items-center group w-80 transform duration-300 -translate-x-72  hover:translate-x-0">
+        <div class="bg-surface h-full w-full p-4 rounded-r-md text-onSurface shadow-md flex flex-col items-center justify-around">
+          
+          <div class="text-left">
+            <h2 class="text-2xl font-semibold antialiased uppercase">Job Portal</h2>
+            <p class="text-xs">Dhaka Credit is the first & largest Credit Union of its kind currently in Bangladesh. Join with us.</p>
+          </div>
+          <ul class="flex flex-col w-full divide-y my-10">
+            <li class="hover:shadow-sm hover:bg-backgroundVariant overflow-hidden p-1 rounded-sm"><a href="/archives/career/single/circular-details/"><p class="antialiased">Software Engineer</p> <p class="text-xs">BSc in CSE</p></a></li>
+            <li class="hover:shadow-sm hover:bg-backgroundVariant overflow-hidden p-1 rounded-sm"><a href="/archives/career/single/circular-details/"><p class="antialiased">Database Administrator</p> <p class="text-xs">BSc in CSE</p></a></li>
+            <li class="hover:shadow-sm hover:bg-backgroundVariant overflow-hidden p-1 rounded-sm"><a href="/archives/career/single/circular-details/"><p class="antialiased">UI/UX Designer and Developer</p> <p class="text-xs">Diploma in Graphycs</p></a></li>
+          </ul>
+          <a href="/archives/career/" class="hover:text-primary hover:font-semibold block text-center">View All</a>
+        </div>
+        <p class="rounded-r-md text-sideways  text-center capitalize shadow-md px-2 py-6 text-onPrimaryVariant bg-primary">
+        Work With Us
+        </p>
+      </div>
+    </div>
+
+    <div class="absolute flex flex-col justify-center h-screen z-50 right-0">
+      
+      <div class="fixed flex flex-row items-center group w-80 transform duration-300 cursor-pointer"
+      
+      :class="{'-translate-x-10' : !rightSideNavOpen, '-translate-x-80' : rightSideNavOpen }"
+      @click="rightSideNavOpen = !rightSideNavOpen">
+         <p class="rounded-l-md text-sideways  text-center capitalize shadow-md px-2 py-6 text-onPrimaryVariant bg-primary">
+        Online Transaction
+        </p>
+        <div class="bg-surface h-full w-full p-4 rounded-l-md text-onSurface shadow-md flex flex-col items-center justify-evenly">
+          <div class="flex justify-start w-full" >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" 
+        stroke="currentColor" class="w-5 h-5 hover:text-primary hover:scale-150"
+        @click="rightSideNavOpen = true"
+        >
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+</svg>
+
+      </div>
+          <div class="flex min-h-96 flex-col gap-1 text-center items-center mb-2">
+                <img class="h-16 w-16 bg-white p-2 rounded-full shadow mb-2" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2000&amp;q=80" alt="">
+                <p class="font-semibold">Anonymous</p>
+                <div class="text-sm leading-normal text-gray-400 flex justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                </svg>
+
+                Account Holder/Visitor
+                </div>
+          </div>
+          <ul class="flex flex-col w-full text-left divide-y">
+            <li class="hover:shadow-sm hover:bg-backgroundVariant overflow-hidden p-1 rounded-sm"><a href=""><p class="font-semibold hover:text-right duration-300 transition-all p-2">Profile</p></a></li>
+            <li class="hover:shadow-sm hover:bg-backgroundVariant overflow-hidden p-1 rounded-sm"><a href=""><p class="font-semibold hover:text-right duration-300 transition-all p-2">Accounts</p></a></li>
+            <li class="hover:shadow-sm hover:bg-backgroundVariant overflow-hidden p-1 rounded-sm"><a href=""><p class="font-semibold hover:text-right duration-300 transition-all p-2">Loans</p></a></li>
+            <li class="hover:shadow-sm hover:bg-backgroundVariant overflow-hidden p-1 rounded-sm"><a href=""><p class="font-semibold hover:text-right duration-300 transition-all p-2">Deposits</p></a></li>
+            <li class="hover:shadow-sm hover:bg-backgroundVariant overflow-hidden p-1 rounded-sm"><a href=""><p class="font-semibold hover:text-right duration-300 transition-all p-2">Transfer</p></a></li>
+            <li class="hover:shadow-sm hover:bg-backgroundVariant overflow-hidden p-1 rounded-sm"><a href=""><p class="font-semibold hover:text-right duration-300 transition-all p-2">Security</p></a></li>
+          </ul>
+        </div>
+       
+      </div>
+    </div>
+  </body>
+    </div>
+</html>

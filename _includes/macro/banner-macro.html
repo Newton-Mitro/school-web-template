@@ -1,0 +1,50 @@
+{% macro renderBanner( bannerTitle="The Christian Co-operative Credit Union
+Ltd., Dhaka", bannerSubtitle='Employment Creation is Our Goal; Self-Reliant
+Community is Our Dream.') %}
+<section class="absolute right-0 top-0 w-full">
+  <div class="relative h-96">
+    <div
+      class="h-full bg-[url('/assets/images/hero/hero.jpg')] bg-cover bg-top bg-no-repeat"
+    >
+      <div
+        class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed"
+        style="background-color: rgba(0, 0, 0, 0.8)"
+      >
+        <div
+          class="flex h-full flex-row items-end justify-center text-gray-300"
+        >
+          <div class="mb-24 px-6 text-center">
+            <h2
+              class="mb-2 animate-backInLeft text-4xl font-bold leading-tight tracking-tight"
+            >
+              {{ bannerTitle }}
+            </h2>
+            <p
+              class="typing-demo hover:typing-demo inline-block w-80 text-sm animate-infinite"
+            >
+              {{ bannerSubtitle }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto text-onPrimary">
+      <div class="relative">
+        <div class="absolute left-0 -bottom-5">
+          <div class="ml-4 flex">
+            <a
+              href=""
+              class="rounded-l-md bg-primaryVariant px-6 py-2 font-semibold"
+              >Home</a
+            >
+            <a href="" class="rounded-r-md bg-primary px-6 py-2"
+              >{{ bannerTitle }}</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endmacro %}
