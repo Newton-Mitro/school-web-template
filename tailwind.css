@@ -4,8 +4,8 @@
 @tailwind utilities;
 @layer base {
   :root {
-    --theme-background: #fafeff;
-    --theme-backgroundVariant: #f6fafd;
+    --theme-background: #f8f8f8;
+    --theme-backgroundVariant: #f1f1f1;
     --theme-on-background: #474747;
     --theme-on-backgroundVariant: #303030;
     --theme-primary: #0070ba;

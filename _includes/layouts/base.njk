@@ -19,29 +19,23 @@
     x-data="{topNavOpen: false, leftSideNavOpen: false, scrollFromTop: false, loggedIn: false, rightSideNavOpen: true, centerModalOpen: false}"
     @scroll.window="window.pageYOffset > 60 ? scrollFromTop = true : scrollFromTop = false"
   >
-    <div
-      class="relative flex min-h-screen flex-col bg-background font-sans-serif"
-    >
-      {% include 'partials/_header.html' %} {{ content | safe }} {% include
-      'partials/_footer.html' %}
+    <div class="relative flex min-h-screen flex-col bg-background font-Roboto">
+      {% include 'partials/_header.html' %} 
+      {{ content | safe }} 
+      {% include 'partials/_footer.html' %}
 
       <div
-        class="absolute z-50 flex h-screen w-96 flex-col justify-center font-bangla-noto"
+        class="absolute z-50 flex h-screen w-fit flex-col justify-center font-Noto-Serif-Bengali"
       >
         <div
-          class="group fixed right-0 flex transform cursor-pointer flex-row items-center duration-300"
-          :class="{'translate-x-0' : rightSideNavOpen, 'translate-x-96' : !rightSideNavOpen }"
+          class="group fixed left-0 flex transform cursor-pointer flex-row items-center duration-300"
+          :class="{'translate-x-0' : rightSideNavOpen, '-translate-x-[304px]' : !rightSideNavOpen }"
           @click="rightSideNavOpen = !rightSideNavOpen"
         >
-          <p
-            class="text-sideways rounded-l-md bg-primary px-2 py-6 text-center capitalize text-onPrimaryVariant shadow-md"
-          >
-            Registration
-          </p>
           <div
-            class="flex h-full w-full flex-col items-center justify-evenly rounded-l-md bg-surface p-4 text-onSurface shadow-md"
+            class="flex h-full w-full flex-col items-center justify-evenly rounded-r-md bg-surface text-onSurface shadow-md"
           >
-            <div class="flex w-full justify-start">
+            <div class="flex w-full justify-end p-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -74,7 +68,7 @@
                       </h2>
                     </div>
                     <div>
-                      <h4 class="py-5 text-center text-6xl text-red-500">
+                      <h4 class="py-5 text-center text-5xl text-red-500">
                         প্লাটিনাম জুবিলী
                       </h4>
                     </div>
@@ -96,7 +90,9 @@
                         class="rounded bg-secondary px-8 py-2 text-sm text-onSecondary hover:bg-secondaryVariant"
                         onclick="modalHandler()"
                       >
-                        <div @click="centerModalOpen = !centerModalOpen">Register Now </div>
+                        <div @click="centerModalOpen = !centerModalOpen">
+                          Register Now
+                        </div>
                       </button>
                     </div>
                   </div>
@@ -104,528 +100,520 @@
               </div>
             </div>
           </div>
+          <p
+            class="text-sideways rounded-r-md bg-primary px-2 py-6 text-center capitalize text-onPrimaryVariant shadow-md"
+          >
+            Registration
+          </p>
         </div>
       </div>
 
       <div
-        class="absolute z-50 flex h-full w-screen flex-col items-center scroll-auto bg-gray-900/20 font-bangla-noto p-4"
-        :class="{'translate-x-0' : centerModalOpen, 'translate-x-full' : !centerModalOpen }"
-        
+        class="font-bangla-noto absolute inset-0 z-50 bg-black/75 p-2"
+        :class="{'translate-x-0' : centerModalOpen, '-translate-x-full' : !centerModalOpen }"
       >
         <div class="center-modal">
-          <div class="">
-            <div class="rounded-lg bg-white shadow pt-16">
-               <button class="text-6xl text-red-700">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="icon icon-tabler icon-tabler-x"
-                        width="30"
-                        height="30"
-                        viewBox="0 0 24 24"
-                        stroke-width="2.5"
-                        stroke="currentColor"
-                        fill="none"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" />
-                        <line x1="18" y1="6" x2="6" y2="18" />
-                        <line x1="6" y1="6" x2="18" y2="18" />
-                      </svg>
-                </button>
-              <section class="">
+          <div class="mx-auto max-w-6xl  bg-surface">
+            <div class="flex w-full items-end justify-end">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-x"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" />
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </div>
+            <section class="">
+              <div class="">
                 <div class="">
-                  <div class="">
-                    <a
-                      class="title-font mb-4 items-center font-medium"
-                      href="/"
-                    >
-                      <img
-                        class="w-30 h-30"
-                        src="Images/Logo/Logo1.png"
-                        alt=""
-                      />
-                    </a>
-                    <nav class="">
-                      <h5 class="mr-5 text-center text-2xl hover:text-gray-900">
-                        প্লাটিনাম জুবিলী - ২০২৩
-                      </h5>
-                      <h4 class="mr-5 text-center hover:text-gray-900">
-                        ২০ ও ২১ জানুয়ারি -২০২৩ খ্রিঃ
-                      </h4>
-                      <p class="mr-5 text-center hover:text-gray-900">
-                        বটমলী হোম বালিকা উচ্চ বিদ্যালয় তেজগাঁও ঢাকা ১২১৫
-                      </p>
-                      <h2 class="text-center text-xl">
-                        রেজিস্ট্রেশন ফরম বিদ্যালয় শিক্ষার্থীর জন্য
-                      </h2>
-                    </nav>
-                   
-                  </div>
+                  <a class="title-font mb-4 items-center font-medium" href="/">
+                    <img class="w-30 h-30" src="Images/Logo/Logo1.png" alt="" />
+                  </a>
+                  <nav class="">
+                    <h5 class="mr-5 text-center text-2xl hover:text-gray-900">
+                      প্লাটিনাম জুবিলী - ২০২৩
+                    </h5>
+                    <h4 class="mr-5 text-center hover:text-gray-900">
+                      ২০ ও ২১ জানুয়ারি -২০২৩ খ্রিঃ
+                    </h4>
+                    <p class="mr-5 text-center hover:text-gray-900">
+                      বটমলী হোম বালিকা উচ্চ বিদ্যালয় তেজগাঁও ঢাকা ১২১৫
+                    </p>
+                    <h2 class="text-center text-xl">
+                      রেজিস্ট্রেশন ফরম বিদ্যালয় শিক্ষার্থীর জন্য
+                    </h2>
+                  </nav>
                 </div>
-              </section>
-              <section class="body-font mt-12">
-                <div class="p-4 px-10">
-                  <form action="" method="POST" enctype="multipart/form-data">
-                    <div class="flex flex-col gap-4">
-                      <div class="">
-                        <div class="h-30 w-40">
-                          <img id="output" />
-                        </div>
-                        <div class="w-1/2">
-                          <label
-                            for="address"
-                            class="text-sm leading-7 text-gray-600"
-                            >Your image</label
-                          ><br />
-                          <input
-                            type="file"
-                            accept="image/*"
-                            onchange="loadFile(event)"
-                            id="address"
-                            name="images"
-                            class="w-90 rounded border border-gray-300 bg-white text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
-                            required
-                          />
-                        </div>
+              </div>
+            </section>
+            <section class="body-font mt-12">
+              <div class="p-4 px-10">
+                <form action="" method="POST" enctype="multipart/form-data">
+                  <div class="flex flex-col gap-4">
+                    <div class="">
+                      <div class="h-30 w-40">
+                        <img id="output" />
                       </div>
-                      <div>
-                        <div class="flex flex-wrap">
-                          <div class="w-1/2 pr-2">
-                            <div class="">
-                              <label
-                                for="name"
-                                class="text-sm leading-7 text-gray-600"
-                                >শিক্ষার্থী পূর্ণ নাম -(বাংলায়)</label
-                              >
-                              <input
-                                type="text"
-                                id="nameBangla"
-                                name="nameBangla"
-                                class="border-black-300 w-full rounded border bg-white py-1 px-3 leading-8 focus:border-indigo-500"
-                                required
-                              />
-                            </div>
-                          </div>
-                          <div class="w-1/2">
-                            <div class="">
-                              <label
-                                for="nameEnglish"
-                                class="text-sm leading-7 text-gray-600"
-                                >শিক্ষার্থী পূর্ণ নাম -(English)</label
-                              >
-                              <input
-                                type="text"
-                                id="nameEnglish"
-                                name="nameEnglish"
-                                class="bg-white-100 border-black-300 w-full rounded border py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
-                                required
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <div class="flex flex-wrap">
-                          <div class="w-1/2 pr-2">
-                            <div class="">
-                              <label
-                                for="studyYear"
-                                class="text-sm leading-7 text-gray-600"
-                                >অধ্যায়ন কাল</label
-                              >
-                              <input
-                                type="text"
-                                id="studyYear"
-                                name="studyYear"
-                                class="bg-white-100 border-black-300 w-full rounded border bg-opacity-50 py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
-                                placeholder="1948-1958"
-                                required
-                              />
-                            </div>
-                          </div>
-                          <div class="w-1/2">
-                            <div class="">
-                              <label
-                                for="sscYear"
-                                class="text-sm leading-7 text-gray-600"
-                                >এস এস সি বর্ষ</label
-                              >
-                              <select
-                                name="sscYear"
-                                id="sscYear"
-                                class="h-10 w-full rounded-md border"
-                                required
-                              >
-                                <option value="1948">1948</option>
-                                <option value="1949">1949</option>
-                                <option value="1950">1950</option>
-                                <option value="1951">1951</option>
-                                <option value="1952">1952</option>
-                                <option value="1953">1953</option>
-                                <option value="1954">1954</option>
-                                <option value="1955">1955</option>
-                                <option value="1956">1956</option>
-                                <option value="1957">1957</option>
-                                <option value="1958">1958</option>
-                                <option value="1959">1959</option>
-                                <option value="1960">1960</option>
-                                <option value="1961">1961</option>
-                                <option value="1962">1962</option>
-                                <option value="1963">1963</option>
-                                <option value="1964">1964</option>
-                                <option value="1965">1965</option>
-                                <option value="1966">1966</option>
-                                <option value="1967">1967</option>
-                                <option value="1968">1968</option>
-                                <option value="1969">1969</option>
-                                <option value="1970">1970</option>
-                                <option value="1971">1971</option>
-                                <option value="1972">1972</option>
-                                <option value="1973">1973</option>
-                                <option value="1974">1974</option>
-                                <option value="1975">1975</option>
-                                <option value="1976">1976</option>
-                                <option value="1977">1977</option>
-                                <option value="1978">1978</option>
-                                <option value="1979">1979</option>
-                                <option value="1980">1980</option>
-                                <option value="1981">1981</option>
-                                <option value="1982">1982</option>
-                                <option value="1983">1983</option>
-                                <option value="1984">1984</option>
-                                <option value="1985">1985</option>
-                                <option value="1986">1986</option>
-                                <option value="1987">1987</option>
-                                <option value="1988">1988</option>
-                                <option value="1989">1989</option>
-                                <option value="1990">1990</option>
-                                <option value="1991">1991</option>
-                                <option value="1992">1992</option>
-                                <option value="1993">1993</option>
-                                <option value="1994">1994</option>
-                                <option value="1995">1995</option>
-                                <option value="1996">1996</option>
-                                <option value="1997">1997</option>
-                                <option value="1998">1998</option>
-                                <option value="1999">1999</option>
-                                <option value="2000">2000</option>
-                                <option value="2001">2001</option>
-                                <option value="2002">2002</option>
-                                <option value="2003">2003</option>
-                                <option value="2004">2004</option>
-                                <option value="2005">2005</option>
-                                <option value="2006">2006</option>
-                                <option value="2007">2007</option>
-                                <option value="2008">2008</option>
-                                <option value="2009">2009</option>
-                                <option value="2010">2010</option>
-                                <option value="2011">2011</option>
-                                <option value="2012">2012</option>
-                                <option value="2013">2013</option>
-                                <option value="2014">2014</option>
-                                <option value="2015">2015</option>
-                                <option value="2016">2016</option>
-                                <option value="2017">2017</option>
-                                <option value="2018">2018</option>
-                                <option value="2019">2019</option>
-                                <option value="2020">2020</option>
-                                <option value="2021">2021</option>
-                                <option value="2022">2022</option>
-                                <option value="2023">2023</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
+                      <div class="w-1/2">
                         <label
                           for="address"
                           class="text-sm leading-7 text-gray-600"
-                          >ঠিকানা/Address</label
-                        >
+                          >Your image</label
+                        ><br />
                         <input
-                          type="text"
+                          type="file"
+                          accept="image/*"
+                          onchange="loadFile(event)"
                           id="address"
-                          name="address"
-                          class="bg-white-100 border-black-300 w-full rounded border text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+                          name="images"
+                          class="w-90 rounded border border-gray-300 bg-white text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
                           required
                         />
                       </div>
-                      <div>
-                        <label for="nid" class="text-sm leading-7 text-gray-600"
-                          >জাতীয় পরিচয় পএ নং/Nid Number</label
-                        >
-                        <input
-                          type="number"
-                          id="nid"
-                          name="nid"
-                          class="border-black-300 w-full rounded border bg-white text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
-                          required
-                        />
-                      </div>
-                      <div>
-                        <div class="flex flex-wrap">
-                          <div class="w-1/3 pr-2">
-                            <div class="">
-                              <label
-                                for="city"
-                                class="text-sm leading-7 text-gray-600"
-                                >শহর/City</label
-                              >
-                              <input
-                                type="text"
-                                id="city"
-                                name="city"
-                                class="bg-white-100 border-black-300 w-full rounded border bg-opacity-50 py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
-                                required
-                              />
-                            </div>
-                          </div>
-                          <div class="w-1/3 pr-2">
-                            <div class="">
-                              <label
-                                for="postCode"
-                                class="text-sm leading-7 text-gray-600"
-                                >পোস্ট কোড/Post Code</label
-                              >
-                              <input
-                                type="number"
-                                id="postCode"
-                                name="postCode"
-                                class="bg-white-100 border-black-300 w-full rounded border bg-opacity-50 py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
-                                required
-                              />
-                            </div>
-                          </div>
-                          <div class="w-1/3">
+                    </div>
+                    <div>
+                      <div class="flex flex-wrap">
+                        <div class="w-1/2 pr-2">
+                          <div class="">
                             <label
-                              for="t-shirt"
+                              for="name"
                               class="text-sm leading-7 text-gray-600"
-                              >পোলো শার্ট সাইজ </label
-                            ><br />
-                            <select
-                              name="t_shirt"
-                              id="t-shirt"
-                              class="h-10 w-full rounded-md border"
-                            >
-                              <option value="S">S</option>
-                              <option value="M">M</option>
-                              <option value="L">L</option>
-                              <option value="XL">XL</option>
-                              <option value="XXL">XXL</option>
-                              <option value="2XL">2XL</option>
-                              <option value="3XL">3XL</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <div class="flex flex-wrap">
-                          <div class="w-1/2 pr-2">
-                            <div class="">
-                              <label
-                                for="email"
-                                class="text-sm leading-7 text-gray-600"
-                                >ইমেইল</label
-                              >
-                              <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                class="bg-white-100 border-black-300 w-full rounded border bg-opacity-50 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
-                                required
-                              />
-                            </div>
-                          </div>
-                          <div class="w-1/2">
-                            <div class="">
-                              <label
-                                for="number"
-                                class="text-sm leading-7 text-gray-600"
-                                >মোবাইল নং</label
-                              >
-                              <input
-                                type="number"
-                                id="number"
-                                name="number"
-                                class="bg-white-100 border-black-300 w-full rounded border bg-opacity-50 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
-                                required
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="border-2 p-2">
-                        <h6 class="py-2">
-                          প্রাক্তন শিক্ষার্থীর জন্য (প্রতিষ্ঠান ও পদবী )
-                        </h6>
-                        <div class="flex flex-wrap">
-                          <div class="w-1/3 pr-2">
-                            <div class="">
-                              <label
-                                for="student"
-                                class="text-sm leading-7 text-gray-600"
-                                >শিক্ষার্থী</label
-                              >
-                              <input
-                                type="text"
-                                id="student"
-                                name="student"
-                                class="bg-white-100 border-black-300 w-full rounded border bg-opacity-50 py-1 px-6 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
-                              />
-                            </div>
-                          </div>
-                          <div class="w-1/3 pr-2">
-                            <div class="">
-                              <label
-                                for="jobHolder"
-                                class="text-sm leading-7 text-gray-600"
-                                >চাকুরী</label
-                              >
-                              <input
-                                type="text"
-                                id="jobHolder"
-                                name="jobHolder"
-                                class="bg-white-100 border-black-300 w-full rounded border bg-opacity-50 py-1 px-6 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
-                              />
-                            </div>
-                          </div>
-                          <div class="w-1/3">
-                            <div class="">
-                              <label
-                                for="business"
-                                class="text-sm leading-7 text-gray-600"
-                                >ব্যবসা</label
-                              >
-                              <input
-                                type="text"
-                                id="business"
-                                name="business"
-                                class="bg-white-100 border-black-300 w-full rounded border bg-opacity-50 py-1 px-6 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="border-2 border-gray-300 p-2">
-                        <h6 class="py-2">বর্তমান শিক্ষার্থীর জন্য</h6>
-                        <div class="flex flex-wrap">
-                          <div class="w-1/2 pr-2">
-                            <div class="">
-                              <label
-                                for="class"
-                                class="text-sm leading-7 text-gray-600"
-                                >শ্রেণী</label
-                              >
-                              <input
-                                type="text"
-                                id="class"
-                                name="class"
-                                class="bg-white-100 border-black-300 w-full rounded border bg-opacity-50 py-1 px-6 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
-                              />
-                            </div>
-                          </div>
-                          <div class="w-1/2">
-                            <div class="">
-                              <label
-                                for="branch"
-                                class="text-sm leading-7 text-gray-600"
-                                >শাখা</label
-                              >
-                              <input
-                                type="text"
-                                id="branch"
-                                name="branch"
-                                class="bg-white-100 border-black-300 w-full rounded border bg-opacity-50 py-1 px-6 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="border-black-300 border-2 p-2">
-                        <h6 class="py-2">রেজিস্ট্রেশন টাকা জমা দেয়ার নিয়ম</h6>
-                        <div class="md:flex md:justify-between">
-                          <p>
-                            বিকাশ/নগদ নাম্বার-০১৭৬২৪৭৬৬৯৩ <br />বর্তমান
-                            শিক্ষার্থী (১০০০ টাকা)<br />প্রাক্তন শিক্ষার্থী
-                            (১৫০০ টাকা)
-                          </p>
-                          <p>
-                            ব্যাংক হিসাব নংঃ BOTTOMLEY HOME GIRLS' HIGH
-                            SCHOOL<br />
-                            A/C. 0123000001099<br />
-                            ONE BANK, KAWRAN BAZAR
-                          </p>
-                        </div>
-                        <div class="flex justify-between">
-                          <div class="w-1/2 pr-2">
-                            <label
-                              for="branch"
-                              class="text-sm leading-7 text-gray-600"
-                              >Select Payment method</label
-                            >
-                            <select
-                              name="payment_method"
-                              id="payment_method"
-                              class="h-10 w-full border-spacing-2 rounded-md border"
-                              onchange="showDiv(this)"
-                              required
-                            >
-                              <option value="" selected="selected">
-                                -- Please Select --
-                              </option>
-                              <option value="bkash">Bkash</option>
-                              <option value="nagad">Nagad</option>
-                              <option value="bank">Bank</option>
-                            </select>
-                          </div>
-                          <div class="hidden w-1/2" id="hidden_div">
-                            <label
-                              for="branch"
-                              class="text-sm leading-7 text-gray-600"
-                              >Transaction Number</label
+                              >শিক্ষার্থী পূর্ণ নাম -(বাংলায়)</label
                             >
                             <input
                               type="text"
-                              id=""
-                              name="trans_number"
-                              class="w-full rounded border border-gray-300 bg-gray-100 bg-opacity-50 py-1 px-6 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
+                              id="nameBangla"
+                              name="nameBangla"
+                              class="border-black-300 w-full rounded border bg-white py-1 px-3 leading-8 focus:border-indigo-500"
+                              required
                             />
                           </div>
-                          <div class="hidden w-1/2" id="hidden_div2">
+                        </div>
+                        <div class="w-1/2">
+                          <div class="">
                             <label
-                              for="branch"
+                              for="nameEnglish"
                               class="text-sm leading-7 text-gray-600"
-                              >Bank Receipt</label
-                            ><br />
+                              >শিক্ষার্থী পূর্ণ নাম -(English)</label
+                            >
                             <input
-                              type="file"
-                              accept="image/*"
-                              name="bankImages"
-                              class="rounded border border-gray-300 bg-gray-100 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+                              type="text"
+                              id="nameEnglish"
+                              name="nameEnglish"
+                              class="bg-white-100 border-black-300 w-full rounded border py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
+                              required
                             />
                           </div>
                         </div>
                       </div>
                     </div>
-                    <button
-                      type="submit"
-                      class="float-center my-6 rounded border-0 bg-sky-500 py-2 px-6 text-lg text-white hover:bg-primaryVariant focus:outline-none"
-                    >
-                      Submit
-                    </button>
-                    <button
-                      data-modal-toggle="default-modal"
-                      type="button"
-                      class="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:z-10 focus:ring-4 focus:ring-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Decline
-                    </button>
-                  </form>
-                </div>
-              </section>
-            </div>
+                    <div>
+                      <div class="flex flex-wrap">
+                        <div class="w-1/2 pr-2">
+                          <div class="">
+                            <label
+                              for="studyYear"
+                              class="text-sm leading-7 text-gray-600"
+                              >অধ্যায়ন কাল</label
+                            >
+                            <input
+                              type="text"
+                              id="studyYear"
+                              name="studyYear"
+                              class="bg-white-100 border-black-300 w-full rounded border bg-opacity-50 py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
+                              placeholder="1948-1958"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div class="w-1/2">
+                          <div class="">
+                            <label
+                              for="sscYear"
+                              class="text-sm leading-7 text-gray-600"
+                              >এস এস সি বর্ষ</label
+                            >
+                            <select
+                              name="sscYear"
+                              id="sscYear"
+                              class="h-10 w-full rounded-md border"
+                              required
+                            >
+                              <option value="1948">1948</option>
+                              <option value="1949">1949</option>
+                              <option value="1950">1950</option>
+                              <option value="1951">1951</option>
+                              <option value="1952">1952</option>
+                              <option value="1953">1953</option>
+                              <option value="1954">1954</option>
+                              <option value="1955">1955</option>
+                              <option value="1956">1956</option>
+                              <option value="1957">1957</option>
+                              <option value="1958">1958</option>
+                              <option value="1959">1959</option>
+                              <option value="1960">1960</option>
+                              <option value="1961">1961</option>
+                              <option value="1962">1962</option>
+                              <option value="1963">1963</option>
+                              <option value="1964">1964</option>
+                              <option value="1965">1965</option>
+                              <option value="1966">1966</option>
+                              <option value="1967">1967</option>
+                              <option value="1968">1968</option>
+                              <option value="1969">1969</option>
+                              <option value="1970">1970</option>
+                              <option value="1971">1971</option>
+                              <option value="1972">1972</option>
+                              <option value="1973">1973</option>
+                              <option value="1974">1974</option>
+                              <option value="1975">1975</option>
+                              <option value="1976">1976</option>
+                              <option value="1977">1977</option>
+                              <option value="1978">1978</option>
+                              <option value="1979">1979</option>
+                              <option value="1980">1980</option>
+                              <option value="1981">1981</option>
+                              <option value="1982">1982</option>
+                              <option value="1983">1983</option>
+                              <option value="1984">1984</option>
+                              <option value="1985">1985</option>
+                              <option value="1986">1986</option>
+                              <option value="1987">1987</option>
+                              <option value="1988">1988</option>
+                              <option value="1989">1989</option>
+                              <option value="1990">1990</option>
+                              <option value="1991">1991</option>
+                              <option value="1992">1992</option>
+                              <option value="1993">1993</option>
+                              <option value="1994">1994</option>
+                              <option value="1995">1995</option>
+                              <option value="1996">1996</option>
+                              <option value="1997">1997</option>
+                              <option value="1998">1998</option>
+                              <option value="1999">1999</option>
+                              <option value="2000">2000</option>
+                              <option value="2001">2001</option>
+                              <option value="2002">2002</option>
+                              <option value="2003">2003</option>
+                              <option value="2004">2004</option>
+                              <option value="2005">2005</option>
+                              <option value="2006">2006</option>
+                              <option value="2007">2007</option>
+                              <option value="2008">2008</option>
+                              <option value="2009">2009</option>
+                              <option value="2010">2010</option>
+                              <option value="2011">2011</option>
+                              <option value="2012">2012</option>
+                              <option value="2013">2013</option>
+                              <option value="2014">2014</option>
+                              <option value="2015">2015</option>
+                              <option value="2016">2016</option>
+                              <option value="2017">2017</option>
+                              <option value="2018">2018</option>
+                              <option value="2019">2019</option>
+                              <option value="2020">2020</option>
+                              <option value="2021">2021</option>
+                              <option value="2022">2022</option>
+                              <option value="2023">2023</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <label
+                        for="address"
+                        class="text-sm leading-7 text-gray-600"
+                        >ঠিকানা/Address</label
+                      >
+                      <input
+                        type="text"
+                        id="address"
+                        name="address"
+                        class="bg-white-100 border-black-300 w-full rounded border text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label for="nid" class="text-sm leading-7 text-gray-600"
+                        >জাতীয় পরিচয় পএ নং/Nid Number</label
+                      >
+                      <input
+                        type="number"
+                        id="nid"
+                        name="nid"
+                        class="border-black-300 w-full rounded border bg-white text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <div class="flex flex-wrap">
+                        <div class="w-1/3 pr-2">
+                          <div class="">
+                            <label
+                              for="city"
+                              class="text-sm leading-7 text-gray-600"
+                              >শহর/City</label
+                            >
+                            <input
+                              type="text"
+                              id="city"
+                              name="city"
+                              class="bg-white-100 border-black-300 w-full rounded border bg-opacity-50 py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div class="w-1/3 pr-2">
+                          <div class="">
+                            <label
+                              for="postCode"
+                              class="text-sm leading-7 text-gray-600"
+                              >পোস্ট কোড/Post Code</label
+                            >
+                            <input
+                              type="number"
+                              id="postCode"
+                              name="postCode"
+                              class="bg-white-100 border-black-300 w-full rounded border bg-opacity-50 py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div class="w-1/3">
+                          <label
+                            for="t-shirt"
+                            class="text-sm leading-7 text-gray-600"
+                            >পোলো শার্ট সাইজ </label
+                          ><br />
+                          <select
+                            name="t_shirt"
+                            id="t-shirt"
+                            class="h-10 w-full rounded-md border"
+                          >
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                            <option value="2XL">2XL</option>
+                            <option value="3XL">3XL</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="flex flex-wrap">
+                        <div class="w-1/2 pr-2">
+                          <div class="">
+                            <label
+                              for="email"
+                              class="text-sm leading-7 text-gray-600"
+                              >ইমেইল</label
+                            >
+                            <input
+                              type="email"
+                              id="email"
+                              name="email"
+                              class="bg-white-100 border-black-300 w-full rounded border bg-opacity-50 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div class="w-1/2">
+                          <div class="">
+                            <label
+                              for="number"
+                              class="text-sm leading-7 text-gray-600"
+                              >মোবাইল নং</label
+                            >
+                            <input
+                              type="number"
+                              id="number"
+                              name="number"
+                              class="bg-white-100 border-black-300 w-full rounded border bg-opacity-50 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
+                              required
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="border-2 p-2">
+                      <h6 class="py-2">
+                        প্রাক্তন শিক্ষার্থীর জন্য (প্রতিষ্ঠান ও পদবী )
+                      </h6>
+                      <div class="flex flex-wrap">
+                        <div class="w-1/3 pr-2">
+                          <div class="">
+                            <label
+                              for="student"
+                              class="text-sm leading-7 text-gray-600"
+                              >শিক্ষার্থী</label
+                            >
+                            <input
+                              type="text"
+                              id="student"
+                              name="student"
+                              class="bg-white-100 border-black-300 w-full rounded border bg-opacity-50 py-1 px-6 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
+                            />
+                          </div>
+                        </div>
+                        <div class="w-1/3 pr-2">
+                          <div class="">
+                            <label
+                              for="jobHolder"
+                              class="text-sm leading-7 text-gray-600"
+                              >চাকুরী</label
+                            >
+                            <input
+                              type="text"
+                              id="jobHolder"
+                              name="jobHolder"
+                              class="bg-white-100 border-black-300 w-full rounded border bg-opacity-50 py-1 px-6 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
+                            />
+                          </div>
+                        </div>
+                        <div class="w-1/3">
+                          <div class="">
+                            <label
+                              for="business"
+                              class="text-sm leading-7 text-gray-600"
+                              >ব্যবসা</label
+                            >
+                            <input
+                              type="text"
+                              id="business"
+                              name="business"
+                              class="bg-white-100 border-black-300 w-full rounded border bg-opacity-50 py-1 px-6 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="border-2 border-gray-300 p-2">
+                      <h6 class="py-2">বর্তমান শিক্ষার্থীর জন্য</h6>
+                      <div class="flex flex-wrap">
+                        <div class="w-1/2 pr-2">
+                          <div class="">
+                            <label
+                              for="class"
+                              class="text-sm leading-7 text-gray-600"
+                              >শ্রেণী</label
+                            >
+                            <input
+                              type="text"
+                              id="class"
+                              name="class"
+                              class="bg-white-100 border-black-300 w-full rounded border bg-opacity-50 py-1 px-6 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
+                            />
+                          </div>
+                        </div>
+                        <div class="w-1/2">
+                          <div class="">
+                            <label
+                              for="branch"
+                              class="text-sm leading-7 text-gray-600"
+                              >শাখা</label
+                            >
+                            <input
+                              type="text"
+                              id="branch"
+                              name="branch"
+                              class="bg-white-100 border-black-300 w-full rounded border bg-opacity-50 py-1 px-6 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="border-black-300 border-2 p-2">
+                      <h6 class="py-2">রেজিস্ট্রেশন টাকা জমা দেয়ার নিয়ম</h6>
+                      <div class="md:flex md:justify-between">
+                        <p>
+                          বিকাশ/নগদ নাম্বার-০১৭৬২৪৭৬৬৯৩ <br />বর্তমান শিক্ষার্থী
+                          (১০০০ টাকা)<br />প্রাক্তন শিক্ষার্থী (১৫০০ টাকা)
+                        </p>
+                        <p>
+                          ব্যাংক হিসাব নংঃ BOTTOMLEY HOME GIRLS' HIGH SCHOOL<br />
+                          A/C. 0123000001099<br />
+                          ONE BANK, KAWRAN BAZAR
+                        </p>
+                      </div>
+                      <div class="flex justify-between">
+                        <div class="w-1/2 pr-2">
+                          <label
+                            for="branch"
+                            class="text-sm leading-7 text-gray-600"
+                            >Select Payment method</label
+                          >
+                          <select
+                            name="payment_method"
+                            id="payment_method"
+                            class="h-10 w-full border-spacing-2 rounded-md border"
+                            onchange="showDiv(this)"
+                            required
+                          >
+                            <option value="" selected="selected">
+                              -- Please Select --
+                            </option>
+                            <option value="bkash">Bkash</option>
+                            <option value="nagad">Nagad</option>
+                            <option value="bank">Bank</option>
+                          </select>
+                        </div>
+                        <div class="hidden w-1/2" id="hidden_div">
+                          <label
+                            for="branch"
+                            class="text-sm leading-7 text-gray-600"
+                            >Transaction Number</label
+                          >
+                          <input
+                            type="text"
+                            id=""
+                            name="trans_number"
+                            class="w-full rounded border border-gray-300 bg-gray-100 bg-opacity-50 py-1 px-6 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
+                          />
+                        </div>
+                        <div class="hidden w-1/2" id="hidden_div2">
+                          <label
+                            for="branch"
+                            class="text-sm leading-7 text-gray-600"
+                            >Bank Receipt</label
+                          ><br />
+                          <input
+                            type="file"
+                            accept="image/*"
+                            name="bankImages"
+                            class="rounded border border-gray-300 bg-gray-100 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    type="submit"
+                    class="float-center my-6 rounded border-0 bg-sky-500 py-2 px-6 text-lg text-white hover:bg-primaryVariant focus:outline-none"
+                  >
+                    Submit
+                  </button>
+                  <button
+                    data-modal-toggle="default-modal"
+                    type="button"
+                    class="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:z-10 focus:ring-4 focus:ring-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >
+                    Decline
+                  </button>
+                </form>
+              </div>
+            </section>
           </div>
         </div>
       </div>

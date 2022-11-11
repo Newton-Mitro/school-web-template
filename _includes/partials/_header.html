@@ -6,7 +6,7 @@
     class="hidden h-12 bg-background text-onBackground"
     :class="{'lg:hidden' : scrollFromTop, 'lg:block' : !scrollFromTop }"
   >
-    <div class="container mx-auto h-full px-4">
+    <div class="container h-full px-4">
       <div class="flex h-full items-center justify-between">
         <ul class="flex gap-4">
           <li>
@@ -67,9 +67,7 @@
     class="relative"
     :class="{'text-onSurface bg-surface shadow-sm' : scrollFromTop, 'text-onPrimary bg-transparent' : !scrollFromTop }"
   >
-    <div
-      class="container mx-auto flex flex-wrap items-center justify-between p-3"
-    >
+    <div class="container flex flex-wrap items-center justify-between p-3">
       <div class="animate-flip">
         <a href="/" class="flex">
           <template x-if="scrollFromTop">
@@ -157,7 +155,7 @@
           </li>
           <li>
             <a
-              href="/archives/loans"
+              href="/archives/notices"
               class="block border-b-2 border-transparent py-2 pr-4 pl-3 hover:scale-110 md:p-0"
               :class="{'hover:border-primary' : scrollFromTop, 'hover:border-onPrimary' : !scrollFromTop }"
               >Notices</a
