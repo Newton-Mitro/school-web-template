@@ -8,12 +8,13 @@
   >
     <div class="container h-full px-4">
       <div class="flex h-full items-center justify-between">
+        {#
         <ul class="flex gap-4">
           <li>
             <a
               href="/archives/notices/"
               class="block border-b-2 border-transparent hover:scale-110 hover:border-primary"
-              >Notice</a
+              >নোটিশস</a
             >
           </li>
           <li>
@@ -24,35 +25,30 @@
             >
           </li>
         </ul>
+        #}
         <ul class="flex gap-2">
           <li
-            class="h-8 w-8 rounded-full bg-secondary text-onSecondary shadow-lg hover:scale-125 hover:text-primary"
+            class="h-8 w-8 rounded-full bg-error text-onSecondary shadow-lg hover:scale-125 hover:text-primary"
           >
-            <a class="h-full w-full" href="https://www.facebook.com/">
+            <a class="h-full w-full" href="#">
               <i
                 class="fa fa-facebook mt-2 h-full w-full text-center leading-3"
               ></i>
             </a>
           </li>
           <li
-            class="h-8 w-8 rounded-full bg-secondary text-onSecondary shadow-lg hover:scale-125 hover:text-primary"
+            class="h-8 w-8 rounded-full bg-error text-onSecondary shadow-lg hover:scale-125 hover:text-primary"
           >
-            <a
-              class="h-full w-full text-center"
-              href="https://www.facebook.com/"
-            >
+            <a class="h-full w-full text-center" href="#">
               <i
                 class="fa fa-phone mt-2 h-full w-full text-center leading-3"
               ></i>
             </a>
           </li>
           <li
-            class="h-8 w-8 rounded-full bg-secondary text-onSecondary shadow-lg hover:scale-125 hover:text-primary"
+            class="h-8 w-8 rounded-full bg-error text-onSecondary shadow-lg hover:scale-125 hover:text-primary"
           >
-            <a
-              class="h-full w-full text-center"
-              href="https://www.facebook.com/"
-            >
+            <a class="h-full w-full text-center" href="#">
               <i
                 class="fa fa-envelope mt-2 h-full w-full text-center leading-3"
               ></i>
@@ -90,8 +86,8 @@
           <span
             class="self-center text-xl font-semibold antialiased"
             :class="{'lg:text-2xl text-primary' : scrollFromTop, 'lg:text-2xl text-white' : !scrollFromTop }"
-            >BHGHS</span
-          >
+            >বি.এইচ.জি.এইচ.এস
+          </span>
         </a>
       </div>
 
@@ -132,7 +128,7 @@
               href="/"
               class="block border-b-2 border-transparent py-2 pr-4 pl-3 hover:scale-110 md:p-0"
               :class="{'hover:border-primary' : scrollFromTop, 'hover:border-onPrimary' : !scrollFromTop }"
-              >Home</a
+              >হোম</a
             >
           </li>
           <li class="group relative inline-block">
@@ -141,7 +137,7 @@
               class="block border-b-2 border-transparent py-2 pr-4 pl-3 hover:scale-110 md:p-0"
               :class="{'hover:border-primary' : scrollFromTop, 'hover:border-onPrimary' : !scrollFromTop }"
             >
-              <span class="flex-1 pr-1 font-semibold">About</span>
+              <span class="flex-1 pr-1 font-semibold">এবাউট</span>
             </a>
           </li>
           <li class="group relative inline-block">
@@ -150,23 +146,25 @@
               class="block border-b-2 border-transparent py-2 pr-4 pl-3 hover:scale-110 md:p-0"
               :class="{'hover:border-primary' : scrollFromTop, 'hover:border-onPrimary' : !scrollFromTop }"
             >
-              <span class="flex-1 pr-1 font-semibold">Gallery</span>
+              <span class="flex-1 pr-1 font-semibold">গ্যালারি</span>
             </a>
           </li>
+          {#
           <li>
             <a
               href="/archives/notices"
               class="block border-b-2 border-transparent py-2 pr-4 pl-3 hover:scale-110 md:p-0"
               :class="{'hover:border-primary' : scrollFromTop, 'hover:border-onPrimary' : !scrollFromTop }"
-              >Notices</a
+              >নোটিশস</a
             >
           </li>
+          #}
           <li class="group relative inline-block">
             <a
               href="/pages/contact"
               class="block border-b-2 border-transparent py-2 pr-4 pl-3 hover:scale-110 md:p-0"
               :class="{'hover:border-primary' : scrollFromTop, 'hover:border-onPrimary' : !scrollFromTop }"
-              >Contact</a
+              >কন্টাক্ট</a
             >
           </li>
           {#

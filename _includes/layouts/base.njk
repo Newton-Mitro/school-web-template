@@ -91,7 +91,7 @@
                         onclick="modalHandler()"
                       >
                         <div @click="centerModalOpen = !centerModalOpen">
-                          Register Now
+                          নিবন্ধন করুন
                         </div>
                       </button>
                     </div>
@@ -103,7 +103,7 @@
           <p
             class="text-sideways rounded-r-md bg-primary px-2 py-6 text-center capitalize text-onPrimaryVariant shadow-md"
           >
-            Registration
+            জুবিলী রেজিস্ট্রেশন
           </p>
         </div>
       </div>
@@ -118,6 +118,7 @@
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="icon icon-tabler icon-tabler-x"
+                @click="centerModalOpen = false"
                 width="30"
                 height="30"
                 viewBox="0 0 24 24"
@@ -607,6 +608,7 @@
                   <button
                     data-modal-toggle="default-modal"
                     type="button"
+                    @click="centerModalOpen = false"
                     class="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:z-10 focus:ring-4 focus:ring-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                   >
                     Decline
